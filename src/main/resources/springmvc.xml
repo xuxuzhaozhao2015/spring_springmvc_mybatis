@@ -26,5 +26,14 @@
     <mvc:resources mapping="/js/**" location="/js/"/>
 
     <!-- 开启springMVC注解支持 -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <!-- 返回Json配置 -->
+<!--        <mvc:message-converters>-->
+<!--            <bean id="myJsonMapper" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
+<!--                <property name="objectMapper">-->
+<!--                    <bean id="mapper" class="top.xuxuzhaozhao.util.MyJsonMapper"/>-->
+<!--                </property>-->
+<!--            </bean>-->
+<!--        </mvc:message-converters>-->
+    </mvc:annotation-driven>
 </beans>

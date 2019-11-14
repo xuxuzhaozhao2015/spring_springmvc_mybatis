@@ -54,7 +54,7 @@
     </tx:advice>
     <!-- 3、配置aop增强 -->
     <aop:config>
-        <aop:pointcut id="pt1" expression="execution(* top.xuxuzhaozhao.service.impl.*ServiceImpl.*(..))"/>
+        <aop:pointcut id="pt1" expression="execution(* top.xuxuzhaozhao.service.*.*ServiceImpl.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pt1"/>
     </aop:config>
 </beans>
