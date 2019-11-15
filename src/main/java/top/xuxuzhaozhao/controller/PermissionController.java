@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import top.xuxuzhaozhao.domain.permission.User;
 import top.xuxuzhaozhao.service.permission.IUserService;
+import top.xuxuzhaozhao.util.Result;
 
 @Controller
 @RequestMapping("api/permission")
@@ -18,10 +19,11 @@ public class PermissionController {
 
     @RequestMapping("login")
     public @ResponseBody
-    User Login(@RequestBody String body) throws Exception {
+    Result Login(@RequestBody String body) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         User u = mapper.readValue(body, User.class);
+        User user = userService.findUser(u.getUsername(), u.getPassword());
 
-        return userService.findUser(u.getUsername(), u.getPassword());
+        return new Result(user);
     }
 }
